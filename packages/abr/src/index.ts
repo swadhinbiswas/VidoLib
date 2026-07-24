@@ -1,4 +1,4 @@
-import { Rendition } from '@media-runtime/manifest';
+import { Rendition } from '@vidolib/manifest';
 
 /**
  * Exponentially Weighted Moving Average (EWMA) Bandwidth Estimator.
