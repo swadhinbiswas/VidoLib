@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- Media Focus Header SVG -->
+<!-- Animated Media Focus Header SVG -->
 <img src="./docs/assets/vido-header.svg" alt="VidoLib - Zero-Dependency Browser Media Engine" width="100%" />
 
 <br/>

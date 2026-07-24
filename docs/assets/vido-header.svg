@@ -16,78 +16,202 @@
     
     <!-- Glow effect -->
     <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     
-    <!-- Film strip pattern -->
-    <pattern id="filmStrip" x="0" y="0" width="40" height="300" patternUnits="userSpaceOnUse">
-      <rect x="5" y="10" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="40" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="70" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="100" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="130" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="160" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="190" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="220" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="250" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-      <rect x="5" y="280" width="30" height="20" rx="2" fill="none" stroke="#334155" stroke-width="1"/>
-    </pattern>
+    <!-- Pulse animation -->
+    <filter id="pulse">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   
   <!-- Background -->
   <rect width="1200" height="300" fill="url(#bgGradient)"/>
   
-  <!-- Film strip decoration (left) -->
-  <rect x="0" y="0" width="50" height="300" fill="url(#filmStrip)" opacity="0.3"/>
+  <!-- Animated particles -->
+  <circle cx="100" cy="50" r="3" fill="#38BDF8" opacity="0.6">
+    <animate attributeName="cy" from="50" to="250" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="80" r="2" fill="#818CF8" opacity="0.5">
+    <animate attributeName="cy" from="80" to="280" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="350" cy="30" r="4" fill="#38BDF8" opacity="0.7">
+    <animate attributeName="cy" from="30" to="230" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="500" cy="60" r="2" fill="#818CF8" opacity="0.4">
+    <animate attributeName="cy" from="60" to="260" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="40" r="3" fill="#38BDF8" opacity="0.6">
+    <animate attributeName="cy" from="40" to="240" dur="3.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="850" cy="70" r="2" fill="#818CF8" opacity="0.5">
+    <animate attributeName="cy" from="70" to="270" dur="4.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="4.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1000" cy="35" r="3" fill="#38BDF8" opacity="0.6">
+    <animate attributeName="cy" from="35" to="235" dur="3.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="55" r="2" fill="#818CF8" opacity="0.5">
+    <animate attributeName="cy" from="55" to="255" dur="4.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="4.8s" repeatCount="indefinite"/>
+  </circle>
   
-  <!-- Film strip decoration (right) -->
-  <rect x="1150" y="0" width="50" height="300" fill="url(#filmStrip)" opacity="0.3"/>
+  <!-- Animated waveform (left) -->
+  <g opacity="0.4">
+    <rect x="80" y="120" width="3" height="20" rx="1" fill="#38BDF8">
+      <animate attributeName="height" values="20;40;20" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="120;110;120" dur="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="90" y="115" width="3" height="30" rx="1" fill="#818CF8">
+      <animate attributeName="height" values="30;15;30" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="115;122;115" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="100" y="125" width="3" height="15" rx="1" fill="#38BDF8">
+      <animate attributeName="height" values="15;35;15" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="125;115;125" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="110" y="110" width="3" height="40" rx="1" fill="#818CF8">
+      <animate attributeName="height" values="40;20;40" dur="1.1s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="110;120;110" dur="1.1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="120" y="118" width="3" height="25" rx="1" fill="#38BDF8">
+      <animate attributeName="height" values="25;45;25" dur="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="118;108;118" dur="0.9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
   
-  <!-- Decorative circles (media nodes) -->
-  <circle cx="100" cy="80" r="40" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.2"/>
-  <circle cx="100" cy="80" r="60" fill="none" stroke="#818CF8" stroke-width="1" opacity="0.15"/>
-  <circle cx="1100" cy="220" r="40" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.2"/>
-  <circle cx="1100" cy="220" r="60" fill="none" stroke="#818CF8" stroke-width="1" opacity="0.15"/>
+  <!-- Animated waveform (right) -->
+  <g opacity="0.4">
+    <rect x="1080" y="120" width="3" height="20" rx="1" fill="#38BDF8">
+      <animate attributeName="height" values="20;40;20" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="120;110;120" dur="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1090" y="115" width="3" height="30" rx="1" fill="#818CF8">
+      <animate attributeName="height" values="30;15;30" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="115;122;115" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1100" y="125" width="3" height="15" rx="1" fill="#38BDF8">
+      <animate attributeName="height" values="15;35;15" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="125;115;125" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1110" y="110" width="3" height="40" rx="1" fill="#818CF8">
+      <animate attributeName="height" values="40;20;40" dur="1.1s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="110;120;110" dur="1.1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1120" y="118" width="3" height="25" rx="1" fill="#38BDF8">
+      <animate attributeName="height" values="25;45;25" dur="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="118;108;118" dur="0.9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
   
-  <!-- Play button icon (center) -->
+  <!-- Pulsing play button -->
   <g transform="translate(600, 100)" filter="url(#glow)">
-    <circle cx="0" cy="0" r="35" fill="none" stroke="url(#accentGradient)" stroke-width="2"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6">
+      <animate attributeName="r" values="40;50;40" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="30" fill="none" stroke="url(#accentGradient)" stroke-width="2"/>
     <polygon points="-12,-18 -12,18 18,0" fill="url(#accentGradient)"/>
   </g>
   
-  <!-- Waveform decoration -->
-  <g opacity="0.3">
-    <rect x="350" y="180" width="3" height="20" rx="1" fill="#38BDF8"/>
-    <rect x="360" y="175" width="3" height="30" rx="1" fill="#38BDF8"/>
-    <rect x="370" y="182" width="3" height="15" rx="1" fill="#38BDF8"/>
-    <rect x="380" y="170" width="3" height="40" rx="1" fill="#818CF8"/>
-    <rect x="390" y="178" width="3" height="25" rx="1" fill="#818CF8"/>
-    <rect x="400" y="185" width="3" height="10" rx="1" fill="#38BDF8"/>
-    
-    <rect x="800" y="180" width="3" height="20" rx="1" fill="#38BDF8"/>
-    <rect x="810" y="175" width="3" height="30" rx="1" fill="#38BDF8"/>
-    <rect x="820" y="182" width="3" height="15" rx="1" fill="#38BDF8"/>
-    <rect x="830" y="170" width="3" height="40" rx="1" fill="#818CF8"/>
-    <rect x="840" y="178" width="3" height="25" rx="1" fill="#818CF8"/>
-    <rect x="850" y="185" width="3" height="10" rx="1" fill="#38BDF8"/>
+  <!-- Rotating film reel (left) -->
+  <g transform="translate(50, 250)" opacity="0.3">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#38BDF8" stroke-width="2">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="5" fill="#38BDF8"/>
+    <circle cx="0" cy="-15" r="3" fill="#818CF8"/>
+    <circle cx="13" cy="7" r="3" fill="#818CF8"/>
+    <circle cx="-13" cy="7" r="3" fill="#818CF8"/>
+  </g>
+  
+  <!-- Rotating film reel (right) -->
+  <g transform="translate(1150, 250)" opacity="0.3">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#818CF8" stroke-width="2">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="5" fill="#818CF8"/>
+    <circle cx="0" cy="-15" r="3" fill="#38BDF8"/>
+    <circle cx="13" cy="7" r="3" fill="#38BDF8"/>
+    <circle cx="-13" cy="7" r="3" fill="#38BDF8"/>
+  </g>
+  
+  <!-- Floating media icons -->
+  <g opacity="0.4">
+    <!-- Play icon -->
+    <g transform="translate(180, 80)">
+      <polygon points="0,-8 0,8 10,0" fill="#38BDF8">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="3s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+    <!-- Pause icon -->
+    <g transform="translate(1020, 80)">
+      <rect x="-4" y="-8" width="3" height="16" fill="#818CF8">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="2.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="1" y="-8" width="3" height="16" fill="#818CF8">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="2.5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
   </g>
   
   <!-- Title: VidoLib -->
-  <text x="600" y="230" font-family="'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" 
+  <text x="600" y="210" font-family="'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" 
         font-size="56" font-weight="800" text-anchor="middle" fill="#F8FAFC" letter-spacing="-2">
     VidoLib
+    <animate attributeName="opacity" values="0;1" dur="1s" fill="freeze"/>
   </text>
   
   <!-- Subtitle -->
-  <text x="600" y="265" font-family="'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" 
-        font-size="18" font-weight="400" text-anchor="middle" fill="#94A3B8" letter-spacing="4">
+  <text x="600" y="248" font-family="'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="16" font-weight="400" text-anchor="middle" fill="#94A3B8" letter-spacing="4">
     ZERO-DEPENDENCY BROWSER MEDIA ENGINE
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="0.3s" fill="freeze"/>
   </text>
   
-  <!-- Accent line -->
-  <line x1="450" y1="280" x2="750" y2="280" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+  <!-- Animated accent line -->
+  <line x1="400" y1="265" x2="800" y2="265" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6">
+    <animate attributeName="x1" values="600;400;600" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="600;800;600" dur="3s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Corner mascot (bottom-right) -->
+  <g transform="translate(1100, 220) scale(0.3)" opacity="0.8">
+    <!-- Simple chibi character -->
+    <ellipse cx="0" cy="0" rx="60" ry="50" fill="#5CE1E6"/>
+    <ellipse cx="0" cy="-20" rx="55" ry="45" fill="#5CE1E6"/>
+    <!-- Eyes -->
+    <ellipse cx="-20" cy="-25" rx="12" ry="14" fill="white"/>
+    <ellipse cx="20" cy="-25" rx="12" ry="14" fill="white"/>
+    <circle cx="-20" cy="-22" r="6" fill="#1E293B"/>
+    <circle cx="20" cy="-22" r="6" fill="#1E293B"/>
+    <!-- Mouth -->
+    <path d="M -10,-5 Q 0,5 10,-5" stroke="#1E293B" stroke-width="2" fill="none"/>
+    <!-- Arms wave -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 -60 0;15 -60 0;0 -60 0" dur="1s" repeatCount="indefinite"/>
+      <ellipse cx="-60" cy="0" rx="15" ry="10" fill="#5CE1E6"/>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 60 0;-15 60 0;0 60 0" dur="1s" repeatCount="indefinite"/>
+      <ellipse cx="60" cy="0" rx="15" ry="10" fill="#5CE1E6"/>
+    </g>
+  </g>
 </svg>
