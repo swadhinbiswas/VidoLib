@@ -189,6 +189,7 @@ Deep dive: [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) · Plugin authoring:
 <details>
 <summary>Repository layout</summary>
 
+```text
 VidoLib/
 ├── packages/
 │   ├── core/
@@ -251,8 +252,10 @@ Generated automatically from the [live contributors graph](https://github.com/sw
 ## Project Activity
 
 <a href="https://star-history.com/#swadhinbiswas/VidoLib&Date">
-  <img src="https://api.star-history.com/svg?repos=swadhinbiswas/VidoLib&type=Date" alt="Star history chart" width="600" />
+  <img src="./assets/star-history.svg" alt="Star history chart" width="600" />
 </a>
+
+[![GitHub Stars](https://img.shields.io/github/stars/swadhinbiswas/VidoLib?style=social)](https://github.com/swadhinbiswas/VidoLib/stargazers)
 
 [Back to top](#vidolib)
 
