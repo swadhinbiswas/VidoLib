@@ -1,10 +1,10 @@
-import { Player } from '@media-runtime/core';
-import { HTTPRangeSource } from '@media-runtime/stream';
-import { HLSParser } from '@media-runtime/manifest';
-import { ABRController } from '@media-runtime/abr';
-import { ContainerRegistry } from '@media-runtime/containers';
-import { CodecNegotiator } from '@media-runtime/codecs';
-import { TelemetryPlugin } from '@media-runtime/telemetry';
+import { Player } from '@vidolib/core';
+import { HTTPRangeSource } from '@vidolib/stream';
+import { HLSParser } from '@vidolib/manifest';
+import { ABRController } from '@vidolib/abr';
+import { ContainerRegistry } from '@vidolib/containers';
+import { CodecNegotiator } from '@vidolib/codecs';
+import { TelemetryPlugin } from '@vidolib/telemetry';
 
 async function main() {
   console.log('--- media-runtime TypeScript Integration Example ---');
@@ -40,7 +40,7 @@ rendition-1080p.m3u8`;
   const telemetry = new TelemetryPlugin();
   await player.use(telemetry);
 
-  player.on('statechange', (state) => console.log('Player State:', state));
+  player.on('statechange', (state: any) => console.log('Player State:', state));
   player.play();
   player.seek(30);
   player.pause();
