@@ -190,9 +190,11 @@ export class WebCodecsVideoDecoder {
   }
 
   public close(): void {
-    if (this.decoder && this._state !== 'closed') {
-      (this.decoder as any).close();
-      this.decoder = undefined;
+    if (this._state !== 'closed') {
+      if (this.decoder) {
+        (this.decoder as any).close();
+        this.decoder = undefined;
+      }
       this._state = 'closed';
     }
   }
@@ -268,9 +270,11 @@ export class WebCodecsAudioDecoder {
   }
 
   public close(): void {
-    if (this.decoder && this._state !== 'closed') {
-      (this.decoder as any).close();
-      this.decoder = undefined;
+    if (this._state !== 'closed') {
+      if (this.decoder) {
+        (this.decoder as any).close();
+        this.decoder = undefined;
+      }
       this._state = 'closed';
     }
   }
