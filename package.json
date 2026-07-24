@@ -21,6 +21,7 @@
     "@types/node": "^22.0.0",
     "@types/web-app-manifest": "^1.0.8",
     "esbuild": "^0.25.0",
+    "happy-dom": "^20.11.1",
     "typescript": "^5.7.2",
     "vitest": "^3.0.0"
   },
