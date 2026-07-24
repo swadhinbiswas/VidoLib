@@ -1,0 +1,39 @@
+<svg width="1200" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="footerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#1E293B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="100" fill="url(#footerGradient)"/>
+  
+  <!-- Waveform at bottom -->
+  <g opacity="0.2">
+    <rect x="100" y="70" width="2" height="15" rx="1" fill="#38BDF8"/>
+    <rect x="110" y="65" width="2" height="25" rx="1" fill="#38BDF8"/>
+    <rect x="120" y="72" width="2" height="10" rx="1" fill="#818CF8"/>
+    <rect x="130" y="60" width="2" height="35" rx="1" fill="#818CF8"/>
+    <rect x="140" y="68" width="2" height="20" rx="1" fill="#38BDF8"/>
+    <rect x="150" y="75" width="2" height="8" rx="1" fill="#38BDF8"/>
+    
+    <rect x="1050" y="70" width="2" height="15" rx="1" fill="#38BDF8"/>
+    <rect x="1060" y="65" width="2" height="25" rx="1" fill="#38BDF8"/>
+    <rect x="1070" y="72" width="2" height="10" rx="1" fill="#818CF8"/>
+    <rect x="1080" y="60" width="2" height="35" rx="1" fill="#818CF8"/>
+    <rect x="1090" y="68" width="2" height="20" rx="1" fill="#38BDF8"/>
+    <rect x="1100" y="75" width="2" height="8" rx="1" fill="#38BDF8"/>
+  </g>
+  
+  <!-- Footer text -->
+  <text x="600" y="50" font-family="'Inter', sans-serif" font-size="12" font-weight="400" 
+        text-anchor="middle" fill="#64748B" letter-spacing="2">
+    BUILT WITH WEBCODECS • WEBGL • WEBGPU • WORKERS
+  </text>
+  
+  <!-- MIT License badge -->
+  <rect x="540" y="65" width="120" height="20" rx="10" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.5"/>
+  <text x="600" y="79" font-family="'Inter', sans-serif" font-size="10" font-weight="500" 
+        text-anchor="middle" fill="#38BDF8" opacity="0.8">MIT LICENSE</text>
+</svg>
